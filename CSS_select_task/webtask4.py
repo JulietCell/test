@@ -22,17 +22,21 @@ wd.find_element_by_css_selector('#work_position_click_bottom_save').click()
 
 time.sleep(2)
 #职能类型
-# wd.find_element_by_css_selector('#funtype_click').click()
+wd.find_element_by_css_selector('.b_key').click()   #下拉菜单缩回
 wd.find_element_by_css_selector('span[class="ic i_add"]').click()
-wd.find_element_by_css_selector('funtype_click_center_left_each_0100').click()
+wd.find_element_by_css_selector('#funtype_click_center_left_each_0100').click()
 wd.find_element_by_css_selector('#funtype_click_center_right_list_category_0100_0100').click()
 wd.find_element_by_css_selector('.funtype_click_center_right_list_sub_category span:nth-child(2)').click()
 wd.find_element_by_css_selector('#funtype_click_bottom_save').click()
 
 #6个可选项
-values = wd.find_elements_by_css_selector('<span class="ic i_arrow"></span>')
-values[0].find_element_by_css_selector('[data-value="10"]').click()
-values[1].find_element_by_css_selector('[data-value="02"]').click()
+values = wd.find_elements_by_css_selector('span[class="ic i_arrow"]')
+values[0].click()
+time.sleep(2)
+wd.find_element_by_css_selector('[data-value="10"]').click()
+values[1].click()
+time.sleep(2)
+wd.find_element_by_css_selector('[title="1-3年"]').click()
 wd.find_element_by_css_selector('.btnbox > span').click()
 
 #获取所有职位
